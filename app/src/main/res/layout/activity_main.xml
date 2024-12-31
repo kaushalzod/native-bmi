@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f6f9ff"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:outlineAmbientShadowColor="#fff"
+        android:outlineSpotShadowColor="#605C5C"
+        android:padding="20dp"
+        app:elevation="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="BMI Calculator"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </com.google.android.material.appbar.AppBarLayout>
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:alignmentMode="alignBounds"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:columnCount="2"
+            android:padding="4dp"
+            android:rowCount="1">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginRight="10dp"
+                android:outlineAmbientShadowColor="#fff"
+                android:outlineSpotShadowColor="#605C5C"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Age"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ageInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:text="20"
+                        android:minEms="2"
+                        android:textAlignment="center"
+                        android:textColor="#49454F"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginBottom="12px" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/removeAge"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="decreaseAge"
+                            app:icon="@drawable/ic_icon_remove_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="subAge"
+                            />
+
+                        <Button
+                            android:id="@+id/addAge"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="increaseAge"
+                            app:icon="@drawable/ic_icon_add_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="addAge"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginLeft="10dp"
+                android:outlineAmbientShadowColor="#fff"
+                android:outlineSpotShadowColor="#605C5C"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Weight"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/weightInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:inputType="numberDecimal"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:text="47"
+                        android:minEms="2"
+                        android:textAlignment="center"
+                        android:textColor="#49454F"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginBottom="12px" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/removeWeight"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="decreaseWeight"
+                            app:icon="@drawable/ic_icon_remove_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="subWeight"
+                            />
+
+                        <Button
+                            android:id="@+id/addWeight"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="increaseWeight"
+                            app:icon="@drawable/ic_icon_add_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="addWeight"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginBottom="20dp"
+                android:outlineAmbientShadowColor="#fff"
+                android:outlineSpotShadowColor="#605C5C"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="cm"
+                        android:textColor="#777777" />
+
+                    <EditText
+                        android:id="@+id/heightInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:text="175"
+                        android:minEms="2"
+                        android:textAlignment="center"
+                        android:textColor="#49454F"
+                        android:textSize="40dp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:layout_marginBottom="12px" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/addHeight"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:contentDescription="decrease"
+                            app:icon="@drawable/ic_icon_remove_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="subHeight"
+                            />
+
+                        <Button
+                            android:id="@+id/removeHeight"
+                            style="?attr/materialIconButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="increase"
+                            app:icon="@drawable/ic_icon_add_48"
+                            app:iconTint="#1827CA"
+                            app:strokeColor="#361827CA"
+                            android:onClick="addHeight"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:outlineAmbientShadowColor="#fff"
+                android:outlineSpotShadowColor="#605C5C"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Gender"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/toggleButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:checkedButton="@+id/btnMale"
+                        app:selectionRequired="true">
+
+                        <Button
+                            android:id="@+id/btnMale"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male"
+                            android:textColor="#1827CA"
+                            app:strokeColor="#361827CA" />
+
+                        <Button
+                            android:id="@+id/btnFemale"
+                            style="?attr/materialButtonOutlinedStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female"
+                            android:textColor="#1827CA"
+                            app:strokeColor="#361827CA" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:layout_marginTop="20dp"
+                android:outlineAmbientShadowColor="#fff"
+                android:outlineSpotShadowColor="#605C5C"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:contentPadding="12dp"
+                app:strokeWidth="0dp">
+
+                <Button
+                    android:id="@+id/submit"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingHorizontal="40dp"
+                    android:text="Submit"
+                    app:strokeColor="#361827CA" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </LinearLayout>
+ </ScrollView>
+</LinearLayout>
